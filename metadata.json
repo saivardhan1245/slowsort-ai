@@ -1,0 +1,6 @@
+{
+  "name": "SlowSort AI",
+  "description": "Local-first, privacy-respecting file organization app powered by Google Gemini AI. Your files. Your machine. Your time back.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

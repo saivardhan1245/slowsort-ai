@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Gaming Command Center - Deep Navy & Layered Blue Surfaces */
+    --bg-canvas: #060913;
+    --bg-surface: #0a1124;
+    --bg-surface-elevated: #0f1b38;
+    --bg-surface-hover: #15264e;
+    --bg-surface-active: #1c3266;
+    --border-subtle: #152342;
+    --border-medium: #1f3461;
+    --border-strong: #2e4b8a;
+    --border-glow-orange: rgba(255, 106, 0, 0.45);
+    --border-glow-cyan: rgba(6, 182, 212, 0.45);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #7384a6;
+    
+    --accent-orange: #ff6a00;
+    --accent-orange-hover: #ff7f24;
+    --accent-orange-subtle: rgba(255, 106, 0, 0.15);
+    --accent-emerald: #10b981;
+    --accent-emerald-subtle: rgba(16, 185, 129, 0.15);
+    --accent-amber: #f59e0b;
+    --accent-amber-subtle: rgba(245, 158, 11, 0.15);
+    --accent-cyan: #06b6d4;
+    --accent-cyan-subtle: rgba(6, 182, 212, 0.15);
+    --accent-red: #ef4444;
+  }
+
+  body {
+    background-color: #060913;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Futuristic command center scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060913;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e3056;
+    border-radius: 4px;
+    border: 1px solid #0a1124;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff6a00;
+    box-shadow: 0 0 8px rgba(255, 106, 0, 0.6);
+  }
+
+  ::selection {
+    background-color: rgba(255, 106, 0, 0.35);
+    color: #ffaa55;
+  }
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Gaming Command Center Glowing & HUD Utilities */
+.glow-orange-sm {
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.35);
+}
+
+.glow-orange-lg {
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.55), 0 0 4px rgba(255, 106, 0, 0.8);
+}
+
+.glow-emerald-sm {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.glow-amber-sm {
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
+}
+
+.hud-border {
+  border: 1px solid #1a294d;
+  background: linear-gradient(180deg, rgba(14, 23, 49, 0.8) 0%, rgba(9, 15, 33, 0.95) 100%);
+  backdrop-filter: blur(8px);
+}
+
+.hud-border-active {
+  border: 1px solid #ff6a00;
+  box-shadow: 0 0 16px rgba(255, 106, 0, 0.25), inset 0 0 12px rgba(255, 106, 0, 0.08);
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
